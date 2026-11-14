@@ -3,14 +3,14 @@ services:
     name: shopverse-marketplace
     env: node
     plan: free
-    buildCommand: npm install --prefix server && npm install --prefix client && npm run build --prefix client
+    buildCommand: npm install --prefix server --production=false && npm install --prefix client --production=false && npm run build --prefix client
     startCommand: node server/server.js
     envVars:
+      - key: NODE_VERSION
+        value: 20
       - key: NODE_ENV
         value: production
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 7d
-      - key: MONGO_URI
-        sync: false
