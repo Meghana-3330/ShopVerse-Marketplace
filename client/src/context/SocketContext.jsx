@@ -86,7 +86,9 @@ export const SocketProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     const socketUrl = import.meta.env.VITE_API_URL
       ? import.meta.env.VITE_API_URL.replace('/api', '')
-      : 'http://localhost:5000';
+      : (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:5000'
+        : window.location.origin;
 
     const s = io(socketUrl, {
       auth: { token: token || '' },

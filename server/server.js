@@ -1,4 +1,5 @@
 const http = require('http');
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -20,9 +21,21 @@ const server = http.createServer(app);
 initSocket(server);
 
 // Security & Utility Middleware
+const allowedOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'];
+if (process.env.CLIENT_URL) {
+  allowedOrigins.push(process.env.CLIENT_URL);
+}
+
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000'],
+    origin: (origin, callback) => {
+      // Allow requests with no origin (same-origin, curl, server-to-server) or listed origins
+      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV === 'production') {
+        callback(null, true);
+      } else {
+        callback(null, true);
+      }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -54,16 +67,26 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
 
-// 404 Route Handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: `API endpoint '${req.originalUrl}' not found.`
-  });
-});
-
-// Centralized Error Handling Middleware
+// Centralized Error Handling Middleware for API Routes
 app.use(errorHandler);
+
+// Production Static Serving: Serve built React client from client/dist
+if (process.env.NODE_ENV === 'production') {
+  const clientDist = path.join(__dirname, '../client/dist');
+  app.use(express.static(clientDist));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(clientDist, 'index.html'));
+  });
+} else {
+  // 404 Route Handler in Development
+  app.use('*', (req, res) => {
+    res.status(404).json({
+      success: false,
+      message: `API endpoint '${req.originalUrl}' not found.`
+    });
+  });
+}
 
 const PORT = process.env.PORT || 5000;
 

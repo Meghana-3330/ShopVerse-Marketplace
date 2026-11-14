@@ -1,0 +1,13 @@
+{
+  "name": "shopverse-marketplace",
+  "version": "1.0.0",
+  "description": "Multi-Vendor E-Commerce Marketplace platform built on MERN stack",
+  "private": true,
+  "scripts": {
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
