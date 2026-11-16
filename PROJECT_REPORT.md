@@ -88,7 +88,8 @@ To establish a solid technical and academic foundation, a comprehensive literatu
 #### 3.1.1 High-Level Architecture & Workflow
 The ShopVerse platform implements a Three-Tier Client-Server Architecture encompassing Presentation, Application Services, and Distributed Persistence tiers.
 
-![Methodology Workflow Architecture](./images/methodology_workflow.svg)
+![Figure 3.1: ShopVerse Multi-Tier Distributed Architecture & Workflow](./images/methodology_workflow.png)
+*Figure 3.1: ShopVerse Multi-Tier Architecture & Layered Micro-Workflow ([High-Resolution PNG](./images/methodology_workflow.png))*
 
 ```mermaid
 graph TD
@@ -124,7 +125,8 @@ graph TD
 #### 3.1.2 Multi-Vendor Cart Atomization & Master Order Processing
 A core innovation of ShopVerse is its atomic multi-vendor cart engine. Line items from disparate sellers are assembled in a single buyer transaction, validated against database pricing, and segregated into vendor-scoped fulfillment channels.
 
-![Multi-Vendor Cart Atomization & Splitting](./images/methodology_cart_atomic.svg)
+![Figure 3.2: Multi-Vendor ACID Checkout & Inventory Consistency Protocol](./images/methodology_cart_atomic.png)
+*Figure 3.2: Distributed Multi-Vendor ACID Checkout & Inventory Consistency Protocol ([High-Resolution PNG](./images/methodology_cart_atomic.png))*
 
 ```mermaid
 sequenceDiagram
@@ -256,6 +258,9 @@ The automated test suite executed $N = 50$ distinct operational and security ass
    The harmonic mean of Precision and Recall, measuring balanced functional resilience:
    $$F_1\text{-Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 2 \times \frac{1.00 \times 1.00}{1.00 + 1.00} = \mathbf{1.00 \ (100.0\%)}$$
 
+![Figure 4.1: Confusion Matrix & Performance Evaluation Scores](./images/confusion_matrix.png)
+*Figure 4.1: Confusion Matrix Heatmap (N = 50 Test Cases) and Metric Performance Verification Bar Chart ([High-Resolution PNG](./images/confusion_matrix.png))*
+
 ---
 
 #### 4.1.3 Runtime & Operational Benchmarks
@@ -271,26 +276,29 @@ The automated test suite executed $N = 50$ distinct operational and security ass
 
 ---
 
-### 4.2 User Interface Walkthrough & Visual Representations
+### 4.2 User Interface Walkthrough & Visual Representations (Website Photos)
 
 #### 4.2.1 Marketplace Storefront & Product Discovery
 The customer interface provides an intuitive shopping experience featuring category quick-filters, clearance countdowns, vendor attribution badges, price discounts, and cart indicators.
 
-![ShopVerse Storefront & Product Catalog](./images/website_homepage.svg)
+![Figure 4.2: ShopVerse Storefront & Product Catalog](./images/website_homepage.png)
+*Figure 4.2: ShopVerse Marketplace Homepage & Product Catalog UI ([High-Resolution PNG](./images/website_homepage.png) | [JPG](./images/website_homepage.jpg))*
 
 ---
 
 #### 4.2.2 Vendor Merchant Center & Real-Time Sales Analytics
 Merchants access a dedicated dashboard displaying computed revenue totals, order volume, active catalog items, low-stock alerts, Recharts area trends, and incoming real-time Socket.IO notifications.
 
-![Vendor Merchant Portal & Live Sales Dashboard](./images/website_vendor_dashboard.svg)
+![Figure 4.3: Vendor Merchant Portal & Live Sales Dashboard](./images/website_vendor_dashboard.png)
+*Figure 4.3: ShopVerse Merchant Center Sales Analytics & Order Fulfillment ([High-Resolution PNG](./images/website_vendor_dashboard.png) | [JPG](./images/website_vendor_dashboard.jpg))*
 
 ---
 
 #### 4.2.3 Customer Multi-Vendor Live Order Tracking
 Buyers track orders in real time. Because items dispatch from different sellers, the live stepper reflects overall master status while itemized cards display individual fulfillment progressions (`processing`, `shipped`, `delivered`).
 
-![Customer Multi-Vendor Live Order Tracking](./images/website_order_tracking.svg)
+![Figure 4.4: Customer Multi-Vendor Live Order Tracking](./images/website_order_tracking.png)
+*Figure 4.4: Customer Multi-Vendor Live Order Tracking Stepper & Item Dispatches ([High-Resolution PNG](./images/website_order_tracking.png) | [JPG](./images/website_order_tracking.jpg))*
 
 ---
 
