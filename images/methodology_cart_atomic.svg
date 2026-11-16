@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%" style="background:#0f172a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="gradBuyer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="gradServer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="gradVendor1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="gradVendor2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+
+  <text x="500" y="40" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700">MULTI-VENDOR CART ATOMIZATION &amp; FULFILLMENT LIFECYCLE</text>
+  <text x="500" y="65" text-anchor="middle" fill="#94a3b8" font-size="13">Single Unified Cart Checkouts ➔ Master Order Creation ➔ Segregated Seller Fulfillment</text>
+
+  <!-- Step 1: Customer Unified Cart -->
+  <rect x="50" y="100" width="240" height="340" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <rect x="50" y="100" width="240" height="38" rx="10" fill="url(#gradBuyer)" />
+  <text x="170" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">1. UNIFIED SHOPPING CART</text>
+
+  <rect x="65" y="155" width="210" height="70" rx="6" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5" />
+  <text x="75" y="178" fill="#c4b5fd" font-size="12" font-weight="600">Item 1: Silk Wedge Sandals</text>
+  <text x="75" y="196" fill="#94a3b8" font-size="11">Vendor: Fashion Aura</text>
+  <text x="75" y="214" fill="#38bdf8" font-size="11">Qty: 1 • ₹1,299</text>
+
+  <rect x="65" y="235" width="210" height="70" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" />
+  <text x="75" y="258" fill="#fde68a" font-size="12" font-weight="600">Item 2: Skate Shoes</text>
+  <text x="75" y="276" fill="#94a3b8" font-size="11">Vendor: ElectroTech / Shoes</text>
+  <text x="75" y="294" fill="#38bdf8" font-size="11">Qty: 1 • ₹1,199</text>
+
+  <rect x="65" y="320" width="210" height="100" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1" />
+  <text x="75" y="345" fill="#f8fafc" font-size="12" font-weight="600">Atomic Checkout Form</text>
+  <text x="75" y="365" fill="#94a3b8" font-size="11">Delivery Address: Bengaluru</text>
+  <text x="75" y="385" fill="#94a3b8" font-size="11">Payment: Simulated Card</text>
+  <text x="75" y="405" fill="#10b981" font-size="12" font-weight="700">Grand Total: ₹2,498</text>
+
+  <!-- Arrow Cart -> Engine -->
+  <line x1="290" y1="270" x2="360" y2="270" stroke="#3b82f6" stroke-width="3" />
+  <polygon points="360,265 370,270 360,275" fill="#3b82f6" />
+  <text x="330" y="255" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="bold">POST /orders</text>
+
+  <!-- Step 2: Server Atomic Engine -->
+  <rect x="370" y="100" width="260" height="340" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <rect x="370" y="100" width="260" height="38" rx="10" fill="url(#gradServer)" />
+  <text x="500" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">2. ATOMIC SERVER ENGINE</text>
+
+  <rect x="385" y="150" width="230" height="50" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1" />
+  <text x="500" y="172" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">1. Query Active Database Prices</text>
+  <text x="500" y="190" text-anchor="middle" fill="#94a3b8" font-size="10">Client prices discarded (Anti-Tamper)</text>
+
+  <rect x="385" y="210" width="230" height="50" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1" />
+  <text x="500" y="232" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">2. Decrement Product Stocks</text>
+  <text x="500" y="250" text-anchor="middle" fill="#94a3b8" font-size="10">Atomic MongoDB decrement query</text>
+
+  <rect x="385" y="270" width="230" height="55" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1" />
+  <text x="500" y="292" text-anchor="middle" fill="#34d399" font-size="11" font-weight="600">3. Create Master Order Record</text>
+  <text x="500" y="310" text-anchor="middle" fill="#94a3b8" font-size="10">#ORD-20261114-620817</text>
+
+  <rect x="385" y="335" width="230" height="90" rx="6" fill="#0f172a" stroke="#3b82f6" stroke-width="1" />
+  <text x="500" y="358" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="600">4. Group by Vendor &amp; Emit</text>
+  <text x="500" y="378" text-anchor="middle" fill="#cbd5e1" font-size="10">Socket: `vendor_1` (Sandals alert)</text>
+  <text x="500" y="396" text-anchor="middle" fill="#cbd5e1" font-size="10">Socket: `vendor_2` (Shoes alert)</text>
+  <text x="500" y="414" text-anchor="middle" fill="#cbd5e1" font-size="10">Socket: `user_c1` (Confirmed)</text>
+
+  <!-- Arrows Engine -> Vendors -->
+  <line x1="630" y1="200" x2="690" y2="170" stroke="#8b5cf6" stroke-width="2.5" />
+  <polygon points="690,165 700,170 690,175" fill="#8b5cf6" />
+  <text x="665" y="165" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="bold">Item 1</text>
+
+  <line x1="630" y1="340" x2="690" y2="360" stroke="#f59e0b" stroke-width="2.5" />
+  <polygon points="690,355 700,360 690,365" fill="#f59e0b" />
+  <text x="665" y="370" text-anchor="middle" fill="#fde68a" font-size="9" font-weight="bold">Item 2</text>
+
+  <!-- Step 3: Vendors Segregated Portals -->
+  <!-- Vendor 1 -->
+  <rect x="700" y="100" width="250" height="150" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <rect x="700" y="100" width="250" height="32" rx="10" fill="url(#gradVendor1)" />
+  <text x="825" y="122" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">VENDOR 1 (Fashion Aura)</text>
+  <text x="715" y="152" fill="#e2e8f0" font-size="11">• Sees: ONLY Silk Wedge Sandals</text>
+  <text x="715" y="172" fill="#e2e8f0" font-size="11">• Vendor Subtotal: ₹1,299</text>
+  <text x="715" y="192" fill="#a78bfa" font-size="11">• Status Action: Processing ➔ Shipped</text>
+  <text x="715" y="212" fill="#94a3b8" font-size="10">Zero access to Vendor 2 items (Isolated)</text>
+
+  <!-- Vendor 2 -->
+  <rect x="700" y="290" width="250" height="150" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2" />
+  <rect x="700" y="290" width="250" height="32" rx="10" fill="url(#gradVendor2)" />
+  <text x="825" y="312" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">VENDOR 2 (ElectroTech)</text>
+  <text x="715" y="342" fill="#e2e8f0" font-size="11">• Sees: ONLY Skate Shoes</text>
+  <text x="715" y="362" fill="#e2e8f0" font-size="11">• Vendor Subtotal: ₹1,199</text>
+  <text x="715" y="382" fill="#fde68a" font-size="11">• Status Action: Shipped ➔ Delivered</text>
+  <text x="715" y="402" fill="#94a3b8" font-size="10">Zero access to Vendor 1 items (Isolated)</text>
+</svg>

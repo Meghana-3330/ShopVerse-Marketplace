@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%" style="background:#0f172a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0" />
+    </linearGradient>
+    <filter id="tileShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Topbar -->
+  <rect x="0" y="0" width="1000" height="55" fill="#1e293b" />
+  <text x="30" y="35" fill="#3b82f6" font-size="20" font-weight="800">Shop<tspan fill="#f59e0b">Verse</tspan> <tspan fill="#94a3b8" font-size="14" font-weight="500">| Vendor Merchant Center</tspan></text>
+  <rect x="760" y="12" width="210" height="32" rx="6" fill="#0f172a" stroke="#334155" />
+  <text x="865" y="32" text-anchor="middle" fill="#f8fafc" font-size="12">Store: Fashion Aura (Approved ✅)</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="55" width="200" height="545" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <rect x="15" y="75" width="170" height="36" rx="6" fill="#2563eb" />
+  <text x="35" y="98" fill="#fff" font-size="13" font-weight="600">📊 Dashboard</text>
+  <text x="35" y="145" fill="#cbd5e1" font-size="13">📦 Products (21)</text>
+  <text x="35" y="185" fill="#cbd5e1" font-size="13">➕ Add Product</text>
+  <text x="35" y="225" fill="#cbd5e1" font-size="13">📑 Orders (12)</text>
+  <text x="35" y="265" fill="#cbd5e1" font-size="13">⚙️ Store Profile</text>
+  <text x="35" y="305" fill="#ef4444" font-size="13">🚪 Logout</text>
+
+  <!-- Main Content Area -->
+  <!-- Stats Row -->
+  <g transform="translate(225, 75)">
+    <!-- Tile 1 -->
+    <rect x="0" y="0" width="175" height="85" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="18" y="28" fill="#94a3b8" font-size="11" font-weight="600">TOTAL REVENUE</text>
+    <text x="18" y="58" fill="#10b981" font-size="22" font-weight="800">₹48,290</text>
+    <text x="18" y="74" fill="#34d399" font-size="10">↑ 18.2% from last week</text>
+
+    <!-- Tile 2 -->
+    <rect x="190" y="0" width="175" height="85" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="208" y="28" fill="#94a3b8" font-size="11" font-weight="600">ORDERS RECEIVED</text>
+    <text x="208" y="58" fill="#38bdf8" font-size="22" font-weight="800">28</text>
+    <text x="208" y="74" fill="#94a3b8" font-size="10">4 pending fulfillment</text>
+
+    <!-- Tile 3 -->
+    <rect x="380" y="0" width="175" height="85" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="398" y="28" fill="#94a3b8" font-size="11" font-weight="600">ACTIVE LISTINGS</text>
+    <text x="398" y="58" fill="#f59e0b" font-size="22" font-weight="800">21</text>
+    <text x="398" y="74" fill="#94a3b8" font-size="10">Fashion Category</text>
+
+    <!-- Tile 4 -->
+    <rect x="570" y="0" width="175" height="85" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="588" y="28" fill="#94a3b8" font-size="11" font-weight="600">LOW STOCK ALERTS</text>
+    <text x="588" y="58" fill="#ef4444" font-size="22" font-weight="800">2</text>
+    <text x="588" y="74" fill="#f87171" font-size="10">Stock below 5 units</text>
+  </g>
+
+  <!-- Chart & Recent Orders -->
+  <!-- Chart Card -->
+  <g transform="translate(225, 180)">
+    <rect x="0" y="0" width="440" height="200" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="18" y="28" fill="#f8fafc" font-size="13" font-weight="700">Sales Trajectory (Recharts Area Graph)</text>
+    <text x="18" y="44" fill="#94a3b8" font-size="10">Weekly store transaction volume</text>
+
+    <!-- Mock Area Chart -->
+    <path d="M 30,160 Q 90,140 150,110 T 270,70 T 390,50 L 390,170 L 30,170 Z" fill="url(#areaGrad)" />
+    <path d="M 30,160 Q 90,140 150,110 T 270,70 T 390,50" fill="none" stroke="#3b82f6" stroke-width="2.5" />
+    <circle cx="270" cy="70" r="4" fill="#60a5fa" />
+    <circle cx="390" cy="50" r="4" fill="#60a5fa" />
+    <text x="30" y="185" fill="#64748b" font-size="9">Mon</text>
+    <text x="120" y="185" fill="#64748b" font-size="9">Wed</text>
+    <text x="210" y="185" fill="#64748b" font-size="9">Fri</text>
+    <text x="300" y="185" fill="#64748b" font-size="9">Sun</text>
+    <text x="380" y="185" fill="#64748b" font-size="9">Today</text>
+  </g>
+
+  <!-- Real-time Alerts Card -->
+  <g transform="translate(685, 180)">
+    <rect x="0" y="0" width="285" height="200" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="18" y="28" fill="#f8fafc" font-size="13" font-weight="700">Live Socket.IO Alerts 🔔</text>
+    <text x="18" y="44" fill="#94a3b8" font-size="10">Subscribed: `vendor_66d24...`</text>
+
+    <rect x="15" y="60" width="255" height="55" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1" />
+    <text x="25" y="80" fill="#34d399" font-size="11" font-weight="bold">New Order Received</text>
+    <text x="25" y="95" fill="#cbd5e1" font-size="10">#ORD-620817 (Wedge Sandals - ₹1,299)</text>
+    <text x="25" y="107" fill="#64748b" font-size="9">Just now • Socket push</text>
+
+    <rect x="15" y="125" width="255" height="55" rx="6" fill="#0f172a" stroke="#334155" />
+    <text x="25" y="145" fill="#38bdf8" font-size="11" font-weight="bold">Item Status Updated</text>
+    <text x="25" y="160" fill="#cbd5e1" font-size="10">#ORD-589104 set to 'Processing'</text>
+    <text x="25" y="172" fill="#64748b" font-size="9">12 mins ago</text>
+  </g>
+
+  <!-- Orders Table -->
+  <g transform="translate(225, 400)">
+    <rect x="0" y="0" width="745" height="180" rx="8" fill="#1e293b" stroke="#334155" filter="url(#tileShadow)" />
+    <text x="20" y="28" fill="#f8fafc" font-size="14" font-weight="700">Recent Vendor Orders (Isolated View)</text>
+
+    <!-- Table Header -->
+    <rect x="15" y="40" width="715" height="28" rx="4" fill="#0f172a" />
+    <text x="25" y="58" fill="#94a3b8" font-size="10" font-weight="600">ORDER #</text>
+    <text x="135" y="58" fill="#94a3b8" font-size="10" font-weight="600">CUSTOMER</text>
+    <text x="270" y="58" fill="#94a3b8" font-size="10" font-weight="600">STORE ITEM(S)</text>
+    <text x="440" y="58" fill="#94a3b8" font-size="10" font-weight="600">AMOUNT</text>
+    <text x="530" y="58" fill="#94a3b8" font-size="10" font-weight="600">STATUS</text>
+    <text x="635" y="58" fill="#94a3b8" font-size="10" font-weight="600">ACTION</text>
+
+    <!-- Row 1 -->
+    <text x="25" y="92" fill="#38bdf8" font-size="11" font-weight="600">#ORD-620817</text>
+    <text x="135" y="92" fill="#e2e8f0" font-size="11">Rahul Verma</text>
+    <text x="270" y="92" fill="#e2e8f0" font-size="11">Silk Wedge Sandals (x1)</text>
+    <text x="440" y="92" fill="#10b981" font-size="11" font-weight="bold">₹1,299</text>
+    <rect x="525" y="77" width="75" height="20" rx="10" fill="#854d0e" />
+    <text x="562" y="91" text-anchor="middle" fill="#fde047" font-size="9" font-weight="bold">PROCESSING</text>
+    <rect x="630" y="76" width="85" height="22" rx="4" fill="#2563eb" />
+    <text x="672" y="91" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Mark Shipped</text>
+
+    <!-- Row 2 -->
+    <text x="25" y="132" fill="#38bdf8" font-size="11" font-weight="600">#ORD-589104</text>
+    <text x="135" y="132" fill="#e2e8f0" font-size="11">Priya Sharma</text>
+    <text x="270" y="132" fill="#e2e8f0" font-size="11">Bandhani Dupatta (x2)</text>
+    <text x="440" y="132" fill="#10b981" font-size="11" font-weight="bold">₹1,598</text>
+    <rect x="525" y="117" width="75" height="20" rx="10" fill="#1e3a8a" />
+    <text x="562" y="131" text-anchor="middle" fill="#93c5fd" font-size="9" font-weight="bold">SHIPPED</text>
+    <rect x="630" y="116" width="85" height="22" rx="4" fill="#059669" />
+    <text x="672" y="131" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Mark Delivered</text>
+  </g>
+</svg>
